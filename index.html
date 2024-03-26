@@ -5,22 +5,231 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="Description" content="COMP2110 2024 Task Manager Application">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <base href="/">
-
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-      background-color: #ededed;
-    }
-  </style>
   <title>COMP2110 Task Manager</title>
 </head>
 
 <body>
-  <comp2110-task-manager></comp2110-task-manager>
+  <comp2110-task-manager>
+    <header>
+      <h2>COMP2110 Task Manager</h2>
+  
+      <nav>
+          <ul>
+              <li id="current"><a href="#">Tasks</a></li>
+              <li><a href="#">Settings</a></li>
+              <li><a href="#">Account</a></li>
+          </ul>
+      </nav>
+  
+      <search>
+          <form action="#">
+              <input type="search" id="tasksearch"  placeholder="Search in Tasks" name="q" />
+              <button type="submit">Search</button>
+            </form>
+      </search>
+  
+      <div id="user">
+          <p>Logged in as <span id="username">Bob Bobalooba</span></p>
+          <button id="logout">Logout</button>
+      </div>
+    </header>
+  
+  
+    <div id="task-manager">
+      <div class="task-board">
+          <h2>To Do</h2>
+          <div class="task-card">
+              <h3>Revise for Final Exam</h3>
+              <p class="task-timestamp">Thu Feb 22 2024</p>
+              <p class="task-due">Sun Jun 2 2024</p>
+              <p class="task-content">Final exam covers the whole unit so read!</p>
+              <p class="task-priority">9</p>
+              
+              <div class="task-controls">
+                  <button class="edit-button">Edit</button>
+                  <button class="delete-button">Delete</button>
+              </div>
+          </div>
+  
+          <div class="task-card">
+              <h3>Organise Group for Major Project</h3>
+              <p class="task-timestamp">Thu Feb 22 2024</p>
+              <p class="task-due">Fri Mar 15 2024</p>
+              <p class="task-content">Talk to people in workshop to find a good group.</p>
+              <p class="task-priority">7</p>
+              
+              <div class="task-controls">
+                  <button class="edit-button">Edit</button>
+                  <button class="delete-button">Delete</button>
+              </div>
+          </div>
+  
+          <div class="task-card">
+              <h3>Practice Javascript</h3>
+              <p class="task-timestamp">Thu Feb 22 2024</p>
+              <p class="task-due">Mon Mar 11 2024</p>
+              <p class="task-content">Need to know more JS so practice writing code.</p>
+              <p class="task-priority">4</p>
+              
+              <div class="task-controls">
+                  <button class="edit-button">Edit</button>
+                  <button class="delete-button">Delete</button>
+              </div>
+          </div>
+  
+  
+          <div class="task-card">
+              <h3>Read About Web Components</h3>
+              <p class="task-timestamp">Thu Feb 22 2024</p>
+              <p class="task-due">Mon Mar 25 2024</p>
+              <p class="task-content">Web components are something to do with Javascript.</p>
+              <p class="task-priority">5</p>
+              
+              <div class="task-controls">
+                  <button class="edit-button">Edit</button>
+                  <button class="delete-button">Delete</button>
+              </div>
+          </div>
+  
+  
+          <div class="task-card">
+              <h3>Revise for First Module Exam</h3>
+              <p class="task-timestamp">Thu Feb 22 2024</p>
+              <p class="task-due">Mon Mar 11 2024</p>
+              <p class="task-content">Read about HTML, CSS and HTTP</p>
+              <p class="task-priority">8</p>
+              
+              <div class="task-controls">
+                  <button class="edit-button">Edit</button>
+                  <button class="delete-button">Delete</button>
+              </div>
+          </div>
+      </div>
+  
+  
+      <div class="task-board">
+          <h2>Doing</h2>
+          <div class="task-card">
+              <h3>Design Task Board</h3>
+              <p class="task-timestamp">Thu Feb 22 2024</p>
+              <p class="task-due">Tue Mar 12 2024</p>
+              <p class="task-content">The task board should have a nice design.</p>
+              <p class="task-priority">4</p>
+              
+              <div class="task-controls">
+                  <button class="edit-button">Edit</button>
+                  <button class="delete-button">Delete</button>
+              </div>
+          </div>
+  
+          <div class="task-card">
+              <h3>Submit Task Board Design</h3>
+              <p class="task-timestamp">Thu Feb 22 2024</p>
+              <p class="task-due">Sun Mar 24 2024</p>
+              <p class="task-content">Everything committed to Github.</p>
+              <p class="task-priority">9</p>
+              
+              <div class="task-controls">
+                  <button class="edit-button">Edit</button>
+                  <button class="delete-button">Delete</button>
+              </div>
+          </div>
+  
+      </div>
+  
+      <div class="task-board">
+          <h2>Done</h2>
+          <div class="task-card">
+              <h3>Enrol in COMP2110</h3>
+              <p class="task-timestamp">Thu Feb 22 2024</p>
+              <p class="task-due">Mon Feb 26 2024</p>
+              <p class="task-content">Need to complete enrolment.</p>
+              <p class="task-priority">8</p>
+              
+              <div class="task-controls">
+                  <button class="edit-button">Edit</button>
+                  <button class="delete-button">Delete</button>
+              </div>
+          </div>
+  
+          <div class="task-card">
+              <h3>Organise Timetable</h3>
+              <p class="task-timestamp">Thu Feb 22 2024</p>
+              <p class="task-due">Mon Feb 26 2024</p>
+              <p class="task-content">Choose a good class.</p>
+              <p class="task-priority">4</p>
+              
+              <div class="task-controls">
+                  <button class="edit-button">Edit</button>
+                  <button class="delete-button">Delete</button>
+              </div>
+          </div>
+  
+          <div class="task-card">
+              <h3>Eat Breakfast</h3>
+              <p class="task-timestamp">Thu Feb 22 2024</p>
+              <p class="task-due">Mon Feb 26 2024</p>
+              <p class="task-content">Apparently it's a good idea.</p>
+              <p class="task-priority">2</p>
+              
+              <div class="task-controls">
+                  <button class="edit-button">Edit</button>
+                  <button class="delete-button">Delete</button>
+              </div>
+          </div>
+  
+      </div>
+    </div>
+  
+    <div id="widgets">
+      <div id="task-stats-widget">
+          <h3>Task Statistics</h3>
+          <dl>
+              <dt>Due Today</dt><dd>3</dd>
+              <dt>To Do</dt><dd>3</dd>
+              <dt>Doing</dt><dd>2</dd>
+              <dt>Done</dt><dd>3</dd>
+          </dl>
+      </div>
+  
+      <div id="weather-widget">
+          <h3>Weather for Sydney</h3>
+          <dl>
+              <dt>Max Temp</dt><dd>29</dd>
+              <dt>Outlook</dt><dd>Partly cloudy</dd>
+              <dt>Chance of any rain</dt><dd>5%</dd>
+              <dt>Summary</dt><dd>Partly cloudy. Winds northeasterly 20 to 30 km/h.</dd>
+          </dl>
+      </div>
+  
+      <div id="this-week-widget">
+          <h3>Due This Week</h3>
+          <ul>
+              <li>Design Task Board</li>
+              <li>Practice Javascript</li>
+          </ul>
+      </div>
+  
+      <div id="task-timer-widget">
+          <h3>Task Timer</h3>
+          <p id="task-timer-remaining">12</p>
+          <p id="task-timer-units">min</p>
+          <div id="task-timer-controls">
+              <button id="task-timer-stop">Stop</button>
+              <button id="task-timer-reset">Reset</button>
+          </div>
+      </div>
+  
+  
+    </div>
+  
+    <footer id="footer">
+      <p id="copyright">Copyright &copy; COMP2110 Web Designers, 2024.</p>
+      <p id="attribution">The COMP2110 Task Manager is a service of Bob Bobalooba Enterprises.</p>
+    </footer>
+  </comp2110-task-manager>
 
   <script type="module" src="./src/main.js"></script> 
 </body>

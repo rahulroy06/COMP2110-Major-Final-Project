@@ -1,0 +1,232 @@
+html {
+    overflow-x: hidden;
+    background-color: #00303f60;
+  }
+  #task-manager {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  
+  .task-board {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: max-content;
+    padding: 10px;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #262228;
+  }
+  
+  #widgets > div {
+    width: 300px;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #262228;
+    padding: 10px;
+    margin: 20px;
+  }
+  
+  header {
+    display: grid;
+    grid-template-columns: 60% 20% 20%;
+    padding: 20px;
+    font-size: 18px;
+  }
+  
+  header h2 {
+    grid-column: 1 / 4;
+    text-align: center;
+    font-size: 25px;
+  }
+  
+  header nav ul li {
+    display: block;
+    list-style-type: none;
+    width: 10%;
+    background-color: #cae4db90;
+    margin-left: -20px;
+    text-align: center;
+  }
+  
+  header a:hover {
+    transition-duration: 0.4s;
+    background-color: #dcae1d;
+  }
+  
+  header a {
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+  }
+  header search,
+  #user {
+    padding: 10px;
+    text-align: center;
+    grid-column: 3;
+    grid-row: 2;
+  }
+  
+  #user {
+    font-size: 20px;
+    margin-top: 25px;
+  }
+  #user button {
+    background-color: #cae4db90;
+    width: 100px;
+    height: 30px;
+  }
+  
+  #user button:hover {
+    transition-duration: 0.4s;
+    background-color: #dcae1d;
+  }
+  
+  form input,
+  form button {
+    font-size: 15px;
+    background-color: #cae4db90;
+  }
+  
+  .task-board h2 {
+    text-align: center;
+    grid-column: 1/3;
+    margin-top: -5px;
+    margin-bottom: -3px;
+  }
+  
+  .task-card {
+    display: inline-grid;
+    grid-template-columns: 10% auto;
+    background-color: #cae4db90;
+    margin: 9px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 1%;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  #widgets {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    height: max-content;
+  }
+  
+  .task-controls button {
+    border-radius: 2px;
+    width: 100px;
+    height: 30px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    border-width: 1px;
+    background-color: #cae4db70;
+  }
+  button:hover {
+    transition-duration: 0.4s;
+    background-color: #dcae1d;
+  }
+  .task-controls {
+    grid-column: 1/3;
+    grid-row: 4;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .task-card h3 {
+    grid-row: 1;
+    grid-column: 2/3;
+    text-align: center;
+  }
+  .task-card .task-timestamp {
+    grid-column: 1/3;
+    grid-row: 6;
+    text-align: center;
+  }
+  
+  .task-card .task-due {
+    grid-column: 1/3;
+    grid-row: 5;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .task-card .task-content {
+    grid-column: 1/3;
+    grid-row: 3;
+  }
+  
+  .task-card .task-priority {
+    grid-column: 1;
+    grid-row: 1;
+    font-weight: bold;
+  }
+  
+  #widgets button {
+    background-color: #cae4db90;
+    width: 100px;
+    height: 30px;
+  }
+  
+  #widgets button:hover {
+    transition-duration: 0.4s;
+    background-color: #dcae1d;
+  }
+  
+  #widgets h3 {
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  #task-stats-widget dl {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    margin: 10px;
+  }
+  
+  dt {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  #weather-widget dl {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    margin: 10px;
+  }
+  #task-timer-widget {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  
+  #task-timer-widget h3 {
+    grid-column: 1/3;
+    gap: 20px;
+    margin: 10px;
+  }
+  
+  #task-timer-remaining {
+    grid-row: 2;
+    grid-column: 1/3;
+    text-align: center;
+    margin: -10px;
+  }
+  
+  #task-timer-units {
+    grid-row: 3;
+    grid-column: 1/3;
+    text-align: center;
+    margin: -30px;
+  }
+  #task-timer-controls {
+    grid-column: 1/3;
+    grid-row: 4;
+    place-self: center;
+    margin: -50px;
+  }
+  

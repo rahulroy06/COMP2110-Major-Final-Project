@@ -7,6 +7,13 @@ class WeeklySummary extends LitElement {
             width: 250px;
             height: 250px;
             background-color: lightblue;
+            border: 3px solid azure;
+            border-radius: 5px;
+        }
+        h3 {
+            background-color: azure;
+            margin-top: 0px;
+            padding: 10px;
         }
     `;
 

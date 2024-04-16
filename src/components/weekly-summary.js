@@ -2,11 +2,11 @@ import {LitElement, html, css} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core
 
 class WeeklySummary extends LitElement {
     static styles = css`
-        host: {
+        :host {
             display: block;
             width: 250px;
             height: 250px;
-            background-color: 
+            background-color: lightblue;
         }
     `;
 

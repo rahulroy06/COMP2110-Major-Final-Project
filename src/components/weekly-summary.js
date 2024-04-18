@@ -26,11 +26,17 @@ class WeeklySummary extends LitElement {
     }
 
     _displayTasks() {
+        // Get the date of the start of the week
         const weekStart = new Date();
         weekStart.setDate(weekStart.getDate() - weekStart.getDay() + 1);
 
+        // Get the date of the end of the week
+        const weekEnd = new Date();
+        weekEnd.setDate(weekEnd.getDate() + (7 - weekEnd.getDay()));
+
         window.addEventListener('tasks', () => {
-            this._weeklyTasks = TaskModel.getTasksForDay(weekStart);
+            // Get all tasks in every category except Done
+            this._weeklyTasks = TaskModel.getTasks("ToDo").concat(TaskModel.getTasks("Doing"));
             console.log("Got Tasks.");
         })
         if (this._weeklyTasks) {

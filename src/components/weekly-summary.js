@@ -36,13 +36,22 @@ class WeeklySummary extends LitElement {
 
         window.addEventListener('tasks', () => {
             // Get all tasks in every category except Done
-            this._weeklyTasks = TaskModel.getTasks("ToDo").concat(TaskModel.getTasks("Doing"));
+            let allTasks = TaskModel.getTasks("ToDo").concat(TaskModel.getTasks("Doing"));
+
+            // Filter array to tasks due this week
+            this._weeklyTasks = [];
+            for (let i = 0; i < allTasks.length; i++) {
+                const taskDue = new Date(allTasks[i].due);
+                if (taskDue >= weekStart && taskDue <= weekEnd) {
+                    this._weeklyTasks.push(allTasks[i]);
+                }
+            }
             console.log("Got Tasks.");
         })
         if (this._weeklyTasks) {
-            return html `<p>Weekly Tasks: ${this._weeklyTasks.length}</p>`
+            return html `<p>Due this week: ${this._weeklyTasks.length}</p>`;
         } else {
-            return html `<p>Loading Weekly Summary...</p>`
+            return html `<p>Loading Weekly Summary...</p>`;
         }
     }
 

@@ -19,6 +19,11 @@ class WeeklySummary extends LitElement {
             margin-top: 0px;
             padding: 10px;
         }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
     `;
 
     constructor() {
@@ -26,12 +31,12 @@ class WeeklySummary extends LitElement {
     }
 
     _displayTasks() {
-        // Get the date of the start of the week
-        const weekStart = new Date();
+        // Get the date of the start of the week, and reset time
+        const weekStart = new Date(new Date().toDateString());
         weekStart.setDate(weekStart.getDate() - weekStart.getDay() + 1);
 
-        // Get the date of the end of the week
-        const weekEnd = new Date();
+        // Get the date of the end of the week, and reset time
+        const weekEnd = new Date(new Date().toDateString());
         weekEnd.setDate(weekEnd.getDate() + (7 - weekEnd.getDay()));
 
         window.addEventListener('tasks', () => {
@@ -41,7 +46,7 @@ class WeeklySummary extends LitElement {
             // Filter array to tasks due this week
             this._weeklyTasks = [];
             for (let i = 0; i < allTasks.length; i++) {
-                const taskDue = new Date(allTasks[i].due);
+                const taskDue = new Date(new Date(allTasks[i].due).toDateString());
                 if (taskDue >= weekStart && taskDue <= weekEnd) {
                     this._weeklyTasks.push(allTasks[i]);
                 }
@@ -59,6 +64,7 @@ class WeeklySummary extends LitElement {
             </ul>
             `;
         } else {
+            // Tasks are still loading
             return html `<p>Loading Weekly Summary...</p>`;
         }
     }

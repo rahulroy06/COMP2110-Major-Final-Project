@@ -49,7 +49,15 @@ class WeeklySummary extends LitElement {
             console.log("Got Tasks.");
         })
         if (this._weeklyTasks) {
-            return html `<p>Due this week: ${this._weeklyTasks.length}</p>`;
+            // Display weekly tasks once loaded
+            return html `
+            <p>Due this week: ${this._weeklyTasks.length}</p>
+            <ul>
+                ${this._weeklyTasks.map((tasks) => 
+                    html`<li>${tasks.summary}</li>`
+                )}
+            </ul>
+            `;
         } else {
             return html `<p>Loading Weekly Summary...</p>`;
         }

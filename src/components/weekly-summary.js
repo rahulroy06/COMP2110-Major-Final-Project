@@ -30,6 +30,28 @@ class WeeklySummary extends LitElement {
         super();
     }
 
+    _sortTasks(arr) {
+        // Sorts tasks in order of due date
+        for (let i = 0; i < arr.length - 1; i++) {
+            // Set the earliest to be the first task
+            let minIdx = i;
+
+            for (let j = i + 1; j < arr.length; j++) {
+                // Find the earliest task in the array
+                if (arr[j].due < arr[minIdx].due) {
+                    minIdx = j;
+                }
+            }
+
+            // Swap earliest task and current index
+            let temp = arr[minIdx];
+            arr[minIdx] = arr[i];
+            arr[i] = temp;
+        }
+
+        console.log("Sorted Tasks")
+    }
+
     _displayTasks() {
         // Get the date of the start of the week, and reset time
         const weekStart = new Date(new Date().toDateString());
@@ -51,7 +73,9 @@ class WeeklySummary extends LitElement {
                     this._weeklyTasks.push(allTasks[i]);
                 }
             }
-            console.log("Got Tasks.");
+            console.log("Got Tasks");
+
+            this._sortTasks(this._weeklyTasks);
         })
         if (this._weeklyTasks) {
             // Display weekly tasks once loaded

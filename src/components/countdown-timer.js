@@ -13,7 +13,7 @@ class CountdownTimer extends LitElement {
         display: block;
         width: 250px;
         height: 250px;
-        background-color: forestgreen;
+        background-color: purple;
         color: yellow;
         border: 2px solid black;
         padding: 20px;

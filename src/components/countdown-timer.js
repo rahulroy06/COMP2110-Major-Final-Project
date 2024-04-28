@@ -12,19 +12,35 @@ class CountdownTimer extends LitElement {
     :host {
         display: block;
         width: 250px;
+        height: 250px;
         background-color: forestgreen;
         color: yellow;
+        border: 2px solid black;
         padding: 20px;
         box-sizing: border-box;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     }
-    :host input {
+    .input-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .input-container input {
         width: calc(50% - 5px);
         margin-right: 5px;
+        border: 1px solid #ccc;
+        padding: 8px;
+        border-radius: 4px;
+    }
+    .button-container {
+        display: flex;
+        justify-content: space-between;
     }
 
     .title {
-      font-size: 18px;
+      font-size: 20px;
       margin-bottom: 10px;
+      font-weight: bold;
     }
 
     .countdown-container {
@@ -45,7 +61,19 @@ class CountdownTimer extends LitElement {
     }
 
     button {
-      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button.start {
+      background-color: #4CAF50;
+      color: white;
+    }
+    button.stop {
+      background-color: #f44336;
+      color: white;
     }
   `;
 
@@ -60,11 +88,13 @@ class CountdownTimer extends LitElement {
   render() {
     return html`
       <div class="title">Countdown Timer</div>
-      <div class="countdown-container">
+      <div class="input-container">
         <input type="number" id="minutesInput" placeholder="Minutes">
         <input type="number" id="secondsInput" placeholder="Seconds">
-        <button @click="${this.startCountdown}">Start Countdown</button>
-        <button @click="${this.stopCountdown}">Stop Countdown</button>
+      </div>
+      <div class="button-container">
+        <button class="start" @click="${this.startCountdown}">Start</button>
+        <button class="stop" @click="${this.stopCountdown}">Stop</button>
       </div>
       <div id="countdown" class="${this.countdownComplete ? 'countdown-complete' : ''}"></div>
     `;

@@ -7,6 +7,8 @@ import './components/login-widget.js';
 import './components/task-manager.js';
 import './components/game-element.js';
 import './components/bmi-widget.js';
+import './components/countdown-timer.js';
+
 /**
  * Comp2110TaskManager component constructs the main UI of the application
  */
@@ -59,7 +61,8 @@ class Comp2110TaskManager extends LitElement {
           <ad-widget></ad-widget>
           <game-element></game-element>
           <bmi-widget></bmi-widget>
-          <widget-block header="Widget 1"></widget-block>
+          <widget-block header="Widget 2"></widget-block>
+          <countdown-timer></countdown-timer>
           <widget-block header="Widget 2"></widget-block>
           <widget-block header="Widget 3"></widget-block>
         </widget-container>

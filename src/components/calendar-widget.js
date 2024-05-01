@@ -8,7 +8,8 @@ import {LitElement, html, css} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core
  */
 class CalenderWidget extends LitElement {
   static properties = {
-    header: {type: String},
+    currentMonth: { type: Number },
+    currentYear: { type: Number },
   };
 
   static styles = css`
@@ -23,7 +24,9 @@ class CalenderWidget extends LitElement {
 
   constructor() {
     super();
-    this.header = 'Widget';
+    const today = new Date();
+    this.currentMonth = today.getMonth() + 1;
+    this.currentYear = today.getFullYear();
   }
 
   render() {

@@ -1,36 +1,49 @@
-import {
-  LitElement,
-  html,
-  css,
-} from "https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js";
-
+import { LitElement, html, css} from "https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js";
 import { TaskModel } from "../models.js";
 
-/**
- shows the calendar for the current month and highlights the   current day and days where tasks are due.  Optionally, allows display of other months via interactive controls.
- */
-class CalenderWidget extends LitElement {
+class CalendarWidget extends LitElement {
   static properties = {
     currentMonth: { type: Number },
     currentYear: { type: Number },
+    tasksLoading: { type: Boolean },
   };
-
-  static styles = css`
-    :host {
-      display: block;
-      width: 250px;
-      height: 250px;
-      background-color: azure;
-      border: 1px solid black;
-    }
-  `;
 
   constructor() {
     super();
     const today = new Date();
     this.currentMonth = today.getMonth() + 1;
     this.currentYear = today.getFullYear();
+    this.tasksLoading = true;
   }
+
+  //refresh widget once tasks have been loaded and added to corresponding due date on the calender
+  connectedCallback() {
+    super.connectedCallback();
+    setTimeout(() => {
+      this.tasksLoading = false;
+      this.requestUpdate();
+    }, 500);
+  }
+
+  static styles = css`
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      border: 0.5px solid black;
+    }
+    .day {
+      text-align: center;
+      padding: 3px;
+      background: white;
+    }
+    .current-day {
+      background: black;
+      color: white;
+    }
+    .due-today {
+      background: lightgreen;
+    }
+  `;
 
   DaysInMonth(month) {
     //dayCount stores the amount of days in the called month
@@ -43,16 +56,62 @@ class CalenderWidget extends LitElement {
     return days;
   }
 
-  DueToday(day) {
+  TasksDue(day) {
     //checking chosen day on current month
-    const date = new Date(this.currentYear, this.currentMonth, day);
+    const date = new Date(this.currentYear, this.currentMonth - 1, day);
     //return true if task is due on specified day
     return TaskModel.getTasksForDay(date).length > 0;
   }
 
+  previousMonth() {
+    //check if month goes past january and reset with december
+    if (this.currentMonth === 1) {
+      this.currentMonth = 12;
+    } else {
+      this.currentMonth -= 1;
+    }
+    this.requestUpdate();
+  }
+
+  nextMonth() {
+    //check if month goes past december and reset with january
+    if (this.currentMonth === 12) {
+      this.currentMonth = 1;
+    } else {
+      this.currentMonth += 1;
+    }
+    this.requestUpdate();
+  }
+
+  renderCalendar() {
+    const days = this.DaysInMonth(this.currentMonth);
+    const today = new Date();
+
+    //create classes for all days, the current day and days where tasks are due
+    return html`
+      ${days.map((day) => {
+        let classes = " day";
+        if (day === today.getDate()) {
+          classes += " current-day";
+        }
+        if (this.TasksDue(day)) {
+          classes += " due-today";
+        }
+        return html` <div class="${classes}">${day}</div> `;
+      })}
+    `;
+  }
+
   render() {
-    return html` <h3>${this.header}</h3> `;
+    return html`
+      <div>
+        <div>Month: ${this.currentMonth.toString()}</div>
+        <button @click="${this.previousMonth}">Previous</button>
+        <button @click="${this.nextMonth}">Next</button>
+      </div>
+      <div class="calendar">${this.renderCalendar()}</div>
+    `;
   }
 }
 
-customElements.define("calender-widget", CalenderWidget);
+customElements.define("calendar-widget", CalendarWidget);

@@ -45,7 +45,7 @@ class CalendarWidget extends LitElement {
     }
   `;
 
-  DaysInMonth(month) {
+  daysInMonth(month) {
     //dayCount stores the amount of days in the called month
     const dayCount = new Date(2024, month, 0).getDate();
     //take the day count and make it an array, starting from 1 to dayCount
@@ -56,7 +56,7 @@ class CalendarWidget extends LitElement {
     return days;
   }
 
-  TasksDue(day) {
+  tasksDue(day) {
     //checking chosen day on current month
     const date = new Date(this.currentYear, this.currentMonth - 1, day);
     //return true if task is due on specified day
@@ -84,7 +84,7 @@ class CalendarWidget extends LitElement {
   }
 
   renderCalendar() {
-    const days = this.DaysInMonth(this.currentMonth);
+    const days = this.daysInMonth(this.currentMonth);
     const today = new Date();
 
     //create classes for all days, the current day and days where tasks are due
@@ -94,7 +94,7 @@ class CalendarWidget extends LitElement {
         if (day === today.getDate()) {
           classes += " current-day";
         }
-        if (this.TasksDue(day)) {
+        if (this.tasksDue(day)) {
           classes += " due-today";
         }
         return html` <div class="${classes}">${day}</div> `;

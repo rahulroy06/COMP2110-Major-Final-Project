@@ -66,8 +66,6 @@ class Comp2110TaskManager extends LitElement {
           <weekly-summary></weekly-summary>
           <countdown-timer></countdown-timer>
           <calendar-widget></calendar-widget>
-          <widget-block header="Widget 2"></widget-block>
-          <widget-block header="Widget 3"></widget-block>
         </widget-container>
       </main>
 

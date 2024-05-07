@@ -22,7 +22,7 @@ class CalendarWidget extends LitElement {
     setTimeout(() => {
       this.tasksLoading = false;
       this.requestUpdate();
-    }, 500);
+    }, 1000);
   }
 
   static styles = css`
@@ -83,6 +83,7 @@ class CalendarWidget extends LitElement {
     this.requestUpdate();
   }
 
+
   renderCalendar() {
     const days = this.daysInMonth(this.currentMonth);
     const today = new Date();
@@ -105,7 +106,7 @@ class CalendarWidget extends LitElement {
   render() {
     return html`
       <div>
-        <div>Month: ${this.currentMonth.toString()}</div>
+        <div>Month: ${this.currentMonth}</div>
         <button @click="${this.previousMonth}">Previous</button>
         <button @click="${this.nextMonth}">Next</button>
       </div>
@@ -114,4 +115,4 @@ class CalendarWidget extends LitElement {
   }
 }
 
-customElements.define("calendar-widget", CalendarWidget);
+customElements.define('calendar-widget', CalendarWidget);

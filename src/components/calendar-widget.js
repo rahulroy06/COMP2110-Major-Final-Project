@@ -16,7 +16,7 @@ class CalendarWidget extends LitElement {
     this.tasksLoading = true;
   }
 
-  //refresh widget once tasks have been loaded and added to corresponding due date on the calender
+  //refresh widget once tasks have been loaded and added to corresponding due date on the calendar
   connectedCallback() {
     super.connectedCallback();
     setTimeout(() => {

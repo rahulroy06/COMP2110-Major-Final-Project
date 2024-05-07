@@ -22,32 +22,46 @@ class CalendarWidget extends LitElement {
     setTimeout(() => {
       this.tasksLoading = false;
       this.requestUpdate();
-    }, 1000);
+    }, 1200);
   }
 
   static styles = css`
+    :host {
+      display: block;
+      width: 250px;
+      height: 250px;
+      background-color: lightblue;
+      border: 3px solid azure;
+      border-radius: 5px;
+    }
     .calendar {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
       border: 0.5px solid black;
+      margin-top: 15px;
     }
     .day {
       text-align: center;
-      padding: 3px;
+      padding: 5px;
       background: white;
     }
     .current-day {
-      background: #201F1F;
+      background: #201f1f;
       color: white;
     }
     .due-today {
-      background: #4DE315;
+      background: #4de315;
     }
-    .month{
-      padding: 2px;
+    .month {
+      margin-top: 10px;
+      padding: 3px;
+      font-weight: bold;
+      font-size: 1.17em;
     }
-    button{
-      margin-bottom: 7px;
+    button {
+      margin-top: 10px;
+      padding: 3px;
+      width: 65px;
     }
   `;
 
@@ -89,7 +103,6 @@ class CalendarWidget extends LitElement {
     this.requestUpdate();
   }
 
-
   renderCalendar() {
     const days = this.daysInMonth(this.currentMonth);
     const today = new Date();
@@ -112,12 +125,12 @@ class CalendarWidget extends LitElement {
   monthToName(){
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     return months[this.currentMonth -1];
-} 
+  } 
 
   render() {
     return html`
       <div>
-        <div class="month">${this.monthToName()}</div>
+        <div class="month">Month: ${this.monthToName()}</div>
         <button @click="${this.previousMonth}">Previous</button>
         <button @click="${this.nextMonth}">Next</button>
       </div>
@@ -126,4 +139,4 @@ class CalendarWidget extends LitElement {
   }
 }
 
-customElements.define('calendar-widget', CalendarWidget);
+customElements.define("calendar-widget", CalendarWidget);

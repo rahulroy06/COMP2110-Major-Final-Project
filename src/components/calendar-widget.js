@@ -37,11 +37,17 @@ class CalendarWidget extends LitElement {
       background: white;
     }
     .current-day {
-      background: black;
+      background: #201F1F;
       color: white;
     }
     .due-today {
-      background: lightgreen;
+      background: #4DE315;
+    }
+    .month{
+      padding: 2px;
+    }
+    button{
+      margin-bottom: 7px;
     }
   `;
 
@@ -103,10 +109,15 @@ class CalendarWidget extends LitElement {
     `;
   }
 
+  monthToName(){
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    return months[this.currentMonth -1];
+} 
+
   render() {
     return html`
       <div>
-        <div>Month: ${this.currentMonth}</div>
+        <div class="month">${this.monthToName()}</div>
         <button @click="${this.previousMonth}">Previous</button>
         <button @click="${this.nextMonth}">Next</button>
       </div>

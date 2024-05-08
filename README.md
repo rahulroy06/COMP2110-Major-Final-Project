@@ -73,3 +73,18 @@ Methods:
 
 `renderCalendar` - creates the calendars html based off the returned daysInMonth array. It creates individual divs for each day of the month, days where tasks are due, and the current day.
 
+## Countdown Timer Widget
+This widget presents a countdown timer allowing users to set a specific time length and start the countdown. It visually displays the remaining time and provides options to start and stop the countdown.
+
+Fields:
+
+`minutes`: Represents the number of minutes entered by the user for the countdown.
+`seconds`: Represents the number of seconds entered by the user for the countdown.
+`countdownInterval`: Holds the interval reference for the countdown.
+`countdownComplete`: Indicates whether the countdown has completed.
+
+Methods:
+
+`startCountdown()`: Initiates the countdown based on the user input for minutes and seconds. It calculates the total time in seconds, validates it, and starts the countdown interval.
+`updateCountdown()`: Updates the countdown every second by decrementing the minutes and seconds accordingly. It also handles the scenario when the countdown reaches zero.
+`stopCountdown()`: Stops the countdown by clearing the countdown interval.

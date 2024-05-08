@@ -17,16 +17,24 @@ class TaskCard extends LitElement {
     :host {
         display: block;
         width: 200px;
-        background-color: #ffffcc;
+        background-color: lightblue;
         color: #003000;
+        border: 3px solid azure;
+        border-radius: 5px;
+        margin-bottom: 15px;
     }
     :host input {
         width: 5em;
     }
     h2 {
-      background-color: red;
+      margin-top: 0px;
+      padding: 10px;
+      background-color: azure;
       font-size: large;
       font-variant: small-caps;
+    }
+    .task-priority:before {
+      content: "Priority - ";
     }
   `;
 

@@ -24,6 +24,12 @@ class EditTask extends LitElement {
         input {
             width: 100%;
         }
+        button {
+          background-color: azure;
+          border-color: azure;
+          border-radius: 5px;
+          padding: 5px;
+        }
       `;
 
   connectedCallback() {

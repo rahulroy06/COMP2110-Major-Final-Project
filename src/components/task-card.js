@@ -31,7 +31,6 @@ class TaskCard extends LitElement {
       padding: 10px;
       background-color: azure;
       font-size: large;
-      font-variant: small-caps;
     }
     .task-priority:before {
       content: "Priority - ";

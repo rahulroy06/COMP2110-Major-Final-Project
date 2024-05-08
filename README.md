@@ -48,7 +48,7 @@ Methods:
 
 `_displayTasks` - Retrieves Tasks from the current week that are not in the Done section, and displays them in a list for the user to see.
 
-## calendar Widget.
+## Calendar Widget.
 Shows the calendar for the current month and highlights the current day and days where tasks are due. Allows user to switch to other months via interactive controls.
 
 Fields:

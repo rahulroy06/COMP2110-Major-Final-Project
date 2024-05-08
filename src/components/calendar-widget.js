@@ -38,7 +38,6 @@ class CalendarWidget extends LitElement {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
       border: 0.5px solid black;
-      margin-top: 15px;
     }
     .day {
       text-align: center;
@@ -59,9 +58,15 @@ class CalendarWidget extends LitElement {
       font-size: 1.17em;
     }
     button {
-      margin-top: 10px;
-      padding: 3px;
-      width: 65px;
+      width: 120px;
+      font-size: 35px;
+      margin-bottom: 5px;
+      background-color: rgba(245, 40, 145, 0);
+      border: none;
+    }
+    button:hover{
+      color: grey;
+      cursor: pointer;
     }
   `;
 
@@ -130,9 +135,9 @@ class CalendarWidget extends LitElement {
   render() {
     return html`
       <div>
-        <div class="month">Month: ${this.monthToName()}</div>
-        <button @click="${this.previousMonth}">Previous</button>
-        <button @click="${this.nextMonth}">Next</button>
+        <div class="month">${this.monthToName()}, ${this.currentYear}</div>
+        <button @click="${this.previousMonth}">⇦</button>
+        <button @click="${this.nextMonth}">⇨</button>
       </div>
       <div class="calendar">${this.renderCalendar()}</div>
     `;

@@ -16,9 +16,8 @@ class TaskBoard extends LitElement {
   static styles = css`
     :host {
       display: block;
-      background-color: #d0cb65;
+      background-color: lightsteelblue;
       color: #000000;
-      border: 1px solid red;
       padding: 10px;
       margin: 10px;
       max-width: 300px;

@@ -21,25 +21,26 @@ class Comp2110TaskManager extends LitElement {
 
   static styles = css`
     :host {
-      min-height: 100vh;   
+      min-height: 100vh;
       font-size: 14pt;
       color: #1a2b42;
       max-width: 960px;
       margin: 0 auto;
       text-align: center;
-      background-color: var(--comp2110-portal-background-color);
+      background-color: var(--comp2110-portal-background-color, white);
     }
-
+    
     main {
       display: flex;
       justify-content: space-between;
     }
-
+    
     .app-footer {
       font-size: calc(12px + 0.5vmin);
       align-items: center;
+      margin-top: 20px;
     }
-
+    
     .app-footer a {
       margin-left: 5px;
     }

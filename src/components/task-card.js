@@ -14,27 +14,33 @@ class TaskCard extends LitElement {
   };
 
   static styles = css`
-    :host {
-        display: block;
-        width: 200px;
-        background-color: lightblue;
-        color: #003000;
-        border: 3px solid azure;
-        border-radius: 5px;
-        margin-bottom: 15px;
-    }
-    :host input {
-        width: 5em;
-    }
-    h2 {
-      margin-top: 0px;
-      padding: 10px;
-      background-color: azure;
-      font-size: large;
-    }
-    .task-priority:before {
-      content: "Priority - ";
-    }
+  :host {
+    display: block;
+    width: 90%;
+    max-width: 300px;
+    background-color: lightblue;
+    color: #003000;
+    border: 3px solid azure;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+  }
+  
+  :host input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  h2 {
+    margin-top: 0;
+    padding: 10px;
+    background-color: azure;
+    font-size: large;
+  }
+  
+  .task-priority:before {
+    content: "Priority - ";
+  }
   `;
 
   connectedCallback() {

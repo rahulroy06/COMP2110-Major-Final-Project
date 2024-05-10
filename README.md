@@ -3,10 +3,10 @@
 As part of your assignment submission, write notes about your implementation
 in this file.
 
-Josh - Calendar Widget
-Rahul - Tic Tac Toe Game Widget
-Jordan - Task Timer Widget
-Aaron - Weekly Summary Widget
+Josh - Calendar Widget <br>
+Rahul - Tic Tac Toe Game Widget <br>
+Jordan - Task Timer Widget <br>
+Aaron - Weekly Summary Widget <br>
 
 
 ## Tic Tac Toe  Game Widget.

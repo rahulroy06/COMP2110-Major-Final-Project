@@ -107,6 +107,11 @@ class CountdownTimer extends LitElement {
     this.minutes = parseInt(minutesInput) || 0;
     this.seconds = parseInt(secondsInput) || 0;
 
+    if (this.minutes < 0 || this.seconds < 0) {
+      alert('Please enter positive numbers only.');
+      return;
+    }
+
     const totalTimeInSeconds = this.minutes * 60 + this.seconds;
 
     if (totalTimeInSeconds <= 0) {
@@ -138,6 +143,11 @@ class CountdownTimer extends LitElement {
 
   stopCountdown() {
     clearInterval(this.countdownInterval);
+    this.minutes = 0;
+    this.seconds = 0;
+    this.countdownComplete = false;
+    const countdownElement = this.shadowRoot.getElementById('countdown');
+    countdownElement.textContent = '';
   }
 }
 

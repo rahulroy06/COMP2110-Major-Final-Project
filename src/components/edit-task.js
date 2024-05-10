@@ -16,19 +16,62 @@ class EditTask extends LitElement {
         form {
             display: flex;
             flex-direction: column;
+            margin-top: 40px;
         }
         form div {
             display: grid;
             grid-template-columns: 1fr 3fr;
+            padding: 5px;
+            column-gap: 15px;
         }
-        input {
+        label {
+          background-color: azure;
+        }
+        #regular-input {
             width: 100%;
+            outline: none;
+            border: 2px solid #999999;
+            padding: 5px;
+            box-sizing: border-box;
         }
         button {
           background-color: azure;
           border-color: azure;
           border-radius: 5px;
           padding: 5px;
+        }
+        #edit-task-dialog {
+          background-color: lightblue;
+          border: 3px solid azure;
+          border-radius: 5px;
+          width: 30%;
+        }
+        textarea {
+          width: 100%;
+          height: 75px;
+          resize: none;
+          border: 2px solid #999999;
+          outline: none;
+          padding: 5px;
+          box-sizing: border-box;
+        }
+        textarea:focus {
+          border-color: #555555;
+        }
+        input[type=submit] {
+          background-color: azure;
+          border-color: azure;
+          border-radius: 5px;
+        }
+        h2 {
+          font-size: large;
+          background-color: azure;
+          margin-top: 0px;
+          padding: 10px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
         }
       `;
 
@@ -83,10 +126,11 @@ class EditTask extends LitElement {
     return html`
         <button @click=${this._showModal}>Edit</button>
         <dialog id="edit-task-dialog">
+            <h2>Task Properties</h2>
             <form @submit="${this._submit}">
                 <div>
                     <label for="summary">Summary</label>
-                    <input name="summary" value=${this._task.summary}>
+                    <input id="regular-input" name="summary" value=${this._task.summary}>
                 </div>
                 <div>
                     <label for="text">Text</label>
@@ -94,13 +138,14 @@ class EditTask extends LitElement {
                 </div>
                 <div>
                     <label for="priority">Priority</label>
-                    <input name="priority" 
+                    <input id="regular-input" 
+                           name="priority" 
                            type="number" 
                            value=${this._task.priority}> 
                 </div>
                 <div>
                     <label for="due">Due</label>
-                    <input name="due" type="datetime-local" value=${due}>
+                    <input id="regular-input" name="due" type="datetime-local" value=${due}>
                 </div>
                 <div>
                     <button @click="${this._hideModal}">Cancel</button>

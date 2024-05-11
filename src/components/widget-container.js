@@ -17,6 +17,10 @@ class WidgetContainer extends LitElement {
     div {
       display: flex;
       flex-direction: column;
+      padding: 10px;
+    }
+    ::slotted(*) {
+      margin-bottom: 15px;
     }
   `;
 

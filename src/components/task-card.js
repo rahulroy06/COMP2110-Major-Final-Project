@@ -24,6 +24,7 @@ class TaskCard extends LitElement {
     border-radius: 5px;
     margin-bottom: 15px;
     padding: 10px;
+    margin: auto;
   }
   
   :host input {
@@ -33,6 +34,7 @@ class TaskCard extends LitElement {
   
   h2 {
     margin-top: 0;
+    margin: -10px;
     padding: 10px;
     background-color: azure;
     font-size: large;

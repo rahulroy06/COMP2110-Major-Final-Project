@@ -21,6 +21,9 @@ class TaskBoard extends LitElement {
       padding: 10px;
       margin: 10px;
       max-width: 300px;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-bottom: 15px;
     }
     
     .task-actions {

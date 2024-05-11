@@ -15,7 +15,7 @@ class CountdownTimer extends LitElement {
         height: 250px;
         background-color: purple;
         color: yellow;
-        border: 2px solid black;
+        border: 3px solid azure;
         padding: 20px;
         box-sizing: border-box;
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);

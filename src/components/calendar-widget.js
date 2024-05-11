@@ -41,7 +41,7 @@ class CalendarWidget extends LitElement {
     }
     .day {
       text-align: center;
-      padding: 5px;
+      padding: 4.7px;
       background: white;
     }
     .current-day {

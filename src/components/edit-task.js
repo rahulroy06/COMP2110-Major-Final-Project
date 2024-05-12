@@ -34,6 +34,9 @@ class EditTask extends LitElement {
             padding: 5px;
             box-sizing: border-box;
         }
+        #regular-input:focus {
+          border-color: #555555;
+        }
         button {
           background-color: azure;
           border-color: azure;

@@ -17,7 +17,37 @@ class LoginWidget extends LitElement {
   static styles = css`
     :host {
         display: block;
-    }`;
+    }
+    
+    input {
+      border: 2px solid #999999;
+      outline: none;
+      padding: 5px;
+    }
+
+    input:focus {
+      border-color: #555555;
+    }
+
+    input[type=submit] {
+      background-color: #b7d7e1;
+      border-color: #b7d7e1;
+    }
+
+    input[type=submit]:hover {
+      color: whitesmoke;
+    }
+
+    button {
+      background-color: #b7d7e1;
+      border: none;
+      padding: 5px;
+    }
+
+    button:hover {
+      color: whitesmoke;
+    }
+    `;
 
   constructor() {
     super();

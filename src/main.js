@@ -47,6 +47,15 @@ class Comp2110TaskManager extends LitElement {
     
     .app-footer a {
       margin-left: 5px;
+      text-decoration: none;
+      color: white;
+      padding-bottom: 3px;
+      transition: 0.2s;
+    }
+
+    .app-footer a:hover {
+      border-bottom: 2px solid;
+      transition: 0.2s;
     }
 
     header {

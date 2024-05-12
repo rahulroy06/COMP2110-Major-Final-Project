@@ -57,7 +57,11 @@ class Comp2110TaskManager extends LitElement {
       border-bottom: 2px solid;
       transition: 0.2s;
     }
-
+    task-manager{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+    }
     header {
       background-color: #9CB8C9;
       padding: 10px;

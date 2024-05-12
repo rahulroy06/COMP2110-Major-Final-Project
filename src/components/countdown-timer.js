@@ -61,7 +61,7 @@ class CountdownTimer extends LitElement {
     }
 
     button {
-      padding: 10px 20px;
+      padding: 5px 10px;
       font-size: 16px;
       border: none;
       border-radius: 4px;
@@ -94,6 +94,7 @@ class CountdownTimer extends LitElement {
       </div>
       <div class="button-container">
         <button class="start" @click="${this.startCountdown}">Start</button>
+        <button class="stop" @click="${this.resetCountdown}">Reset</button>
         <button class="stop" @click="${this.stopCountdown}">Stop</button>
       </div>
       <div id="countdown" class="${this.countdownComplete ? 'countdown-complete' : ''}"></div>
@@ -140,7 +141,15 @@ class CountdownTimer extends LitElement {
 
     countdownElement.textContent = `${this.minutes.toString().padStart(2, '0')}:${this.seconds.toString().padStart(2, '0')}`;
   }
-
+  resetCountdown() {
+    clearInterval(this.countdownInterval);
+    this.minutes = 0;
+    this.seconds = 0;
+    this.countdownComplete = false;
+    const countdownElement = this.shadowRoot.getElementById('countdown');
+    countdownElement.textContent = '';
+  }
+  
   stopCountdown() {
     clearInterval(this.countdownInterval);
     this.minutes = 0;

@@ -29,7 +29,7 @@ class CalendarWidget extends LitElement {
     :host {
       display: block;
       width: 250px;
-      height: 250px;
+      height: 260px;
       background-color: lightblue;
       border: 3px solid azure;
       border-radius: 5px;
@@ -52,15 +52,14 @@ class CalendarWidget extends LitElement {
       background: #4de315;
     }
     .month {
-      margin-top: 10px;
-      padding: 3px;
+      padding: 10px;
       font-weight: bold;
       font-size: 1.17em;
+      background-color: azure;
     }
     button {
       width: 120px;
       font-size: 35px;
-      margin-bottom: 5px;
       background-color: rgba(245, 40, 145, 0);
       border: none;
     }

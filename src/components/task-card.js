@@ -19,7 +19,7 @@ class TaskCard extends LitElement {
     width: 90%;
     max-width: 300px;
     background-color: lightblue;
-    color: #003000;
+    color: black;
     border: 3px solid azure;
     border-radius: 5px;
     margin-bottom: 15px;

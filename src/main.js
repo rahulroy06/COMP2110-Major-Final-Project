@@ -23,7 +23,7 @@ class Comp2110TaskManager extends LitElement {
     :host {
       min-height: 100vh;
       font-size: 14pt;
-      color: #1a2b42;
+      color: black;
       max-width: 960px;
       margin: 0 auto;
       text-align: center;
@@ -40,8 +40,9 @@ class Comp2110TaskManager extends LitElement {
       align-items: center;
       margin: auto;
       margin-top: 20px;
-      background-color: lightblue;
+      background-color: #3B4359;
       padding: 15px;
+      color: whitesmoke;
     }
     
     .app-footer a {
@@ -49,7 +50,7 @@ class Comp2110TaskManager extends LitElement {
     }
 
     header {
-      background-color: #dbebf0;
+      background-color: #9CB8C9;
       padding: 10px;
       margin-bottom: 15px;
     }

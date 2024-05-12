@@ -30,8 +30,8 @@ class LoginWidget extends LitElement {
     }
 
     input[type=submit] {
-      background-color: #b7d7e1;
-      border-color: #b7d7e1;
+      background-color: #AFCFE2;
+      border-color: #AFCFE2;
     }
 
     input[type=submit]:hover {
@@ -39,7 +39,7 @@ class LoginWidget extends LitElement {
     }
 
     button {
-      background-color: #b7d7e1;
+      background-color: #AFCFE2;
       border: none;
       padding: 5px;
     }
